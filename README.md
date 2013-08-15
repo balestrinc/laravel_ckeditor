@@ -27,7 +27,7 @@ To test if is OK, you should create a route:
 
 ```php
 Route::get('/ck', function(){	
-  echo CKEditor::editor('texarea_name','<h1>Teste</h1><p><i>Teste</i></p>');
+  echo CKEditor::editor('textarea_name','<h1>Teste</h1><p><i>Teste</i></p>');
 });
 ```
 
