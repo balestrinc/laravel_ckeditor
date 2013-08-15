@@ -41,6 +41,10 @@ class CkeditorServiceProvider extends ServiceProvider {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
             $loader->alias('CKEditor', 'Wysiwyg\Ckeditor\Facades\CKEditor');
         });
+        
+        $this->loadConfig();
+        
+        
 	}
 
 	/**
@@ -51,6 +55,16 @@ class CkeditorServiceProvider extends ServiceProvider {
 	public function provides()
 	{
 		return array('ckeditor');
+	}
+	
+	/**
+	 * Load the config for the package
+	 *
+	 * @return void
+	 */
+	protected function loadConfig()
+	{
+		$this->app['config']->package('wysiwyg/ckeditor', __DIR__.'/../../../config');
 	}
 
 }

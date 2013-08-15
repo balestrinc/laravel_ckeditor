@@ -6,10 +6,10 @@
         "illuminate/support": "4.0.x",
         "illuminate/config": ">=1.0.0"
     },
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
+    "autoload": {       
+        "psr-0": {
+            "Wysiwyg\\Ckeditor": "src/"
+        }
     },
     "minimum-stability": "dev"
 }

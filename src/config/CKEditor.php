@@ -4,7 +4,7 @@ return array(
 	'config_class'=>array(
 
 		'returnOutput' => true,
-	    'basePath' => URL::asset('/ckeditor\/'),
+	    'basePath' => URL::asset('/packages/wysiwyg/ckeditor/ckeditor\/'),
 	    'width' => '100%',
 	
 	    //Define os padrões de Colar para Plain Text

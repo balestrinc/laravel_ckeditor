@@ -14,10 +14,7 @@ namespace Wysiwyg\Ckeditor;
  */
 class CKEditor extends \Wysiwyg\Ckeditor\CKEditor_php5
 {
-	private $config_class = 'packages/wysiwyg/ckeditor/CKEditor.config_class';
-	private $base_path 	  = 'packages/wysiwyg/ckeditor/CKEditor.config_class.basePath';
-	private $config_js 	  = 'packages/wysiwyg/ckeditor/CKEditor.config_js';
-
+	
 	/**
 	 * Main Constructor.
 	 *
@@ -27,15 +24,8 @@ class CKEditor extends \Wysiwyg\Ckeditor\CKEditor_php5
 	 */
 	function __construct()
 	{
-		
-		ladybug_dump(	\Config::get('CKEditor.config_class')); 
-		
-		die();
-	
-		
-		parent::__construct( \Config::get($this->base_path) );
-		
-		$this->config	= \Config::get( $this->config_class );
+		parent::__construct( \Config::get('ckeditor::CKEditor.config_class.basePath') );
+		$this->config	= \Config::get( 'ckeditor::CKEditor.config_class' );
 		
 	}
 	
@@ -71,7 +61,7 @@ class CKEditor extends \Wysiwyg\Ckeditor\CKEditor_php5
 	public function editor($name, $value = "", $config = array(), $events = array())
 	{
 		if( empty($config) )
-			$config = \Config::get( $this->config_js );
+			$config = \Config::get( 'ckeditor::CKEditor.config_js' );
 			
 		return parent::editor( $name, $value, $config, $events  );
 	}
